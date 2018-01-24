@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Entry: Equatable {
+class Entry: Equatable, Codable{
     
     static func ==(lhs: Entry, rhs: Entry) -> Bool {
         return lhs.title == rhs.title && lhs.bodyText == rhs.bodyText

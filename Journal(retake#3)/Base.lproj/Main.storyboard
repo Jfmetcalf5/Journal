@@ -59,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Entry..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wmc-WJ-lHX">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wmc-WJ-lHX">
+                                <rect key="frame" x="10" y="72" width="355" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -68,10 +68,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wmc-WJ-lHX" firstAttribute="top" secondItem="jP3-R5-yen" secondAttribute="top" constant="60" id="7rH-O2-Oin"/>
-                            <constraint firstItem="jP3-R5-yen" firstAttribute="trailing" secondItem="wmc-WJ-lHX" secondAttribute="trailing" id="A0C-gc-Z1W"/>
-                            <constraint firstItem="wmc-WJ-lHX" firstAttribute="leading" secondItem="jP3-R5-yen" secondAttribute="leading" id="X2c-Fp-Cva"/>
-                            <constraint firstItem="jP3-R5-yen" firstAttribute="bottom" secondItem="wmc-WJ-lHX" secondAttribute="bottom" id="dKY-9U-BQi"/>
+                            <constraint firstItem="wmc-WJ-lHX" firstAttribute="top" secondItem="jP3-R5-yen" secondAttribute="top" constant="8" id="7rH-O2-Oin"/>
+                            <constraint firstItem="jP3-R5-yen" firstAttribute="trailing" secondItem="wmc-WJ-lHX" secondAttribute="trailing" constant="10" id="A0C-gc-Z1W"/>
+                            <constraint firstItem="wmc-WJ-lHX" firstAttribute="leading" secondItem="jP3-R5-yen" secondAttribute="leading" constant="10" id="X2c-Fp-Cva"/>
+                            <constraint firstItem="jP3-R5-yen" firstAttribute="bottom" secondItem="wmc-WJ-lHX" secondAttribute="bottom" constant="10" id="dKY-9U-BQi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jP3-R5-yen"/>
                     </view>

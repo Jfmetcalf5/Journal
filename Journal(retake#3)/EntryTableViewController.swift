@@ -12,11 +12,23 @@ class EntryTableViewController: UITableViewController {
 
     @IBOutlet var entryTableView: UITableView!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         entryTableView.reloadData()
     }
-
+    
+    //____________________________\/____________________________
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        entryTableView.reloadData()
+    }
+    //____________________________/\____________________________
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +46,14 @@ class EntryTableViewController: UITableViewController {
         // Return the cell
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        var entryPath = EntryController.shared.entries[indexPath.row]
+//        if editingStyle == .delete {
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+////            entryTableView.deleteSections(editingStyle, with: .fade)
+//        }              NEED HELP!!!
+//    }
 
     
     // MARK: - Navigation

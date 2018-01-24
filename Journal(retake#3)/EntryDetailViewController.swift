@@ -18,14 +18,12 @@ class EntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        // Do any additional setup after loading the view.
+        updateUI()
     }
-
+    //_______________________________\/_______________________________
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let title = titleTextField.text,
-            title != "",
-            let text = bodyTextView.text,
-            !text.isEmpty else { return }
+            let text = bodyTextView.text else { return }
         
         guard let unwrappedEntry = entry else {
             // there is no entry
@@ -37,9 +35,17 @@ class EntryDetailViewController: UIViewController {
         // there is an entry
         // update the entry
         EntryController.shared.update(entry: unwrappedEntry, title: title, text: text)
-        
         navigationController?.popViewController(animated: true)
     }
+    //_______________________________/\_______________________________
+    
+    func updateUI() {
+        bodyTextView.layer.borderWidth = 2
+        bodyTextView.layer.borderColor = UIColor.lightGray.cgColor
+        view.backgroundColor = .lightGray
+    }
+    
+    //_________________\/_________________
     func updateViews() {
         guard let entry = entry else {
             return
@@ -47,5 +53,5 @@ class EntryDetailViewController: UIViewController {
         titleTextField.text = entry.title
         bodyTextView.text = entry.bodyText
     }
-
+    //_________________/\_________________
 }
