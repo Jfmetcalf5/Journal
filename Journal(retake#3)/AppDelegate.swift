@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Journal(retake#3)
+//  Entry(retake#3)
 //
 //  Created by Jacob Metcalf on 1/23/18.
 //  Copyright © 2018 JfMetcalf. All rights reserved.
