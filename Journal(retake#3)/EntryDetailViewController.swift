@@ -20,23 +20,25 @@ class EntryDetailViewController: UIViewController {
         updateViews()
         updateUI()
     }
+    
     //_______________________________\/_______________________________
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        guard let title = titleTextField.text,
-            let text = bodyTextView.text else { return }
-        
-        guard let unwrappedEntry = entry else {
-            // there is no entry
-            // creat a new entry
+        guard let title = titleTextField.text, title != "",
+            let text = bodyTextView.text, text != "" else { return }
+        guard let entry = entry else {
             EntryController.shared.addEntryWith(title: title, text: text)
             navigationController?.popViewController(animated: true)
-            return
-        }
-        // there is an entry
-        // update the entry
-        EntryController.shared.update(entry: unwrappedEntry, title: title, text: text)
+            return }
+        EntryController.shared.update(entry: entry, title: title, text: text)
         navigationController?.popViewController(animated: true)
+        
     }
+    // Make sure the title and text fields aren't empty
+    
+    // If there is an entry, update it
+    
+
+
     //_______________________________/\_______________________________
     
     func updateUI() {
@@ -47,11 +49,10 @@ class EntryDetailViewController: UIViewController {
     
     //_________________\/_________________
     func updateViews() {
-        guard let entry = entry else {
-            return
-        }
-        titleTextField.text = entry.title
-        bodyTextView.text = entry.bodyText
+        // If an entry exists, then update views
+        guard let entry = entry else { return }
+            titleTextField.text = entry.title
+            bodyTextView.text = entry.title
     }
     //_________________/\_________________
 }
